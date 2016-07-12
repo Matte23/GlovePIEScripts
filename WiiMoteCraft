@@ -1,0 +1,21 @@
+// WiiMoteCraft script by Matte23
+
+
+if wiimote.HasMotionPlus = false then debug = "WiiMotion Plus NOT DETECTED!"
+if wiimote.HasNunchuk = false then debug = "Nunchuk NOT DETECTED!"
+WASD = nunchuk1.Joy
+F = Wiimote1.Plus
+Esc = Wiimote1.Home or Wiimote1.OnTable
+mouse.RightButton = Wiimote1.B
+mouse.LeftButton = Wiimote1.A or Nunchuk1.SwingHorizontal
+mouse.MiddleButton = Wiimote1.Minus
+E = WiiMote1.1
+Q = WiiMote1.2
+Space = Wiimote1.SwingVertical or Wiimote1.Pitch >= 30
+Shift = Wiimote1.Pitch <= -30
+mouse.WheelDown = Nunchuk1.C
+mouse.WheelUp = Nunchuk1.Z
+mouse.DirectInputX = mouse.DirectInputX - 3*deadzone(WiiMote1.Left) + 3*deadzone(WiiMote1.Right)
+mouse.DirectInputY = mouse.DirectInputY - 3*deadzone(WiiMote1.Up) + 3*deadzone(WiiMote1.Down)
+Pressed(Tab) = Pressed(Wiimote.LookingAtRightPalm)
+Released(Tab) = Released(Wiimote.LookingAtRightPalm)
